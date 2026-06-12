@@ -1,7 +1,24 @@
-export async function onRequestPost(context) {
-  try {
-    const { request, env } = context;
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
 
+    // API route for the contact form
+    if (url.pathname === "/api/contact" && request.method === "POST") {
+      return handleContactForm(request, env);
+    }
+
+    // If someone visits /api/contact in the browser with GET
+    if (url.pathname.startsWith("/api/contact")) {
+      return jsonResponse({ error: "Method not allowed" }, 405);
+    }
+
+    // Everything else serves the React website
+    return env.ASSETS.fetch(request);
+  },
+};
+
+async function handleContactForm(request, env) {
+  try {
     const data = await request.json();
 
     const name = data.name?.trim();
