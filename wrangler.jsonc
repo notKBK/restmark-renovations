@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "restmark-renovations",
+  "name": "restmark-renovations-worker",
   "main": "./worker/index.js",
   "compatibility_date": "2026-06-11",
   "assets": {
