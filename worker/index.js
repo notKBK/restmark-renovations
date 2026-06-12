@@ -214,7 +214,7 @@ async function handleContactForm(request, env) {
       },
       body: JSON.stringify({
         from: "Website Form <automated@restmarkrenovations.com>",
-        to: ["info@restmarkrenovations.com"],
+        to: ["bencooney1212@gmail.com", "info@restmarkrenovations.com"],
         reply_to: email,
         subject: `${name} filled out the form.`,
         html,
