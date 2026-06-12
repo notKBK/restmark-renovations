@@ -41,90 +41,97 @@ async function handleContactForm(request, env) {
     background-color: #f4f1ec;
     font-family: Arial, Helvetica, sans-serif;
     color: #222222;
+    width: 100%;
   ">
     <div style="
+      width: 100%;
       max-width: 620px;
       margin: 0 auto;
-      padding: 24px 14px;
+      padding: 14px 10px;
+      box-sizing: border-box;
     ">
       <div style="
         background-color: #111111;
         color: #ffffff;
-        padding: 24px 22px;
-        border-radius: 14px 14px 0 0;
+        padding: 20px 18px;
+        border-radius: 12px 12px 0 0;
+        box-sizing: border-box;
       ">
         <div style="
-          font-size: 13px;
-          letter-spacing: 1.5px;
+          font-size: 12px;
+          letter-spacing: 1.3px;
           text-transform: uppercase;
           color: #c9a45c;
           font-weight: 700;
-          margin-bottom: 8px;
+          margin-bottom: 7px;
         ">
           RestMark Renovations
         </div>
 
         <h1 style="
           margin: 0;
-          font-size: 24px;
+          font-size: 19px;
           line-height: 1.25;
           font-weight: 700;
         ">
-          New Website Form Submission
+          New Form Submission
         </h1>
       </div>
 
       <div style="
         background-color: #ffffff;
-        padding: 24px 22px;
+        padding: 18px 16px;
         border: 1px solid #e7e2d8;
         border-top: none;
-        border-radius: 0 0 14px 14px;
+        border-radius: 0 0 12px 12px;
+        box-sizing: border-box;
       ">
         <div style="
-          margin-bottom: 18px;
-          padding-bottom: 18px;
+          margin-bottom: 13px;
+          padding-bottom: 13px;
           border-bottom: 1px solid #eeeeee;
         ">
           <div style="
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.9px;
             color: #777777;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             font-weight: 700;
           ">
             Name
           </div>
           <div style="
-            font-size: 18px;
-            line-height: 1.4;
+            font-size: 17px;
+            line-height: 1.35;
             color: #111111;
             font-weight: 700;
+            word-break: break-word;
           ">
             ${escapeHtml(name)}
           </div>
         </div>
 
         <div style="
-          margin-bottom: 18px;
-          padding-bottom: 18px;
+          margin-bottom: 13px;
+          padding-bottom: 13px;
           border-bottom: 1px solid #eeeeee;
         ">
           <div style="
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.9px;
             color: #777777;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             font-weight: 700;
           ">
             Email
           </div>
           <div style="
-            font-size: 16px;
-            line-height: 1.4;
+            font-size: 15px;
+            line-height: 1.35;
             color: #111111;
+            word-break: break-word;
           ">
             <a href="mailto:${escapeHtml(email)}" style="
               color: #111111;
@@ -137,24 +144,25 @@ async function handleContactForm(request, env) {
         </div>
 
         <div style="
-          margin-bottom: 18px;
-          padding-bottom: 18px;
+          margin-bottom: 13px;
+          padding-bottom: 13px;
           border-bottom: 1px solid #eeeeee;
         ">
           <div style="
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.9px;
             color: #777777;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             font-weight: 700;
           ">
             Phone
           </div>
           <div style="
-            font-size: 16px;
-            line-height: 1.4;
+            font-size: 15px;
+            line-height: 1.35;
             color: #111111;
+            word-break: break-word;
           ">
             <a href="tel:${escapeHtml(phone || "")}" style="
               color: #111111;
@@ -168,38 +176,28 @@ async function handleContactForm(request, env) {
 
         <div>
           <div style="
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.9px;
             color: #777777;
-            margin-bottom: 8px;
+            margin-bottom: 7px;
             font-weight: 700;
           ">
             Project Details
           </div>
           <div style="
-            font-size: 16px;
-            line-height: 1.65;
+            font-size: 14px;
+            line-height: 1.55;
             color: #222222;
             background-color: #f8f6f1;
             border: 1px solid #eee8dc;
-            border-radius: 10px;
-            padding: 16px;
+            border-radius: 9px;
+            padding: 13px;
+            word-break: break-word;
+            box-sizing: border-box;
           ">
             ${escapeHtml(message).replace(/\n/g, "<br>")}
           </div>
-        </div>
-
-        <div style="
-          margin-top: 24px;
-          padding-top: 18px;
-          border-top: 1px solid #eeeeee;
-          font-size: 13px;
-          line-height: 1.5;
-          color: #777777;
-        ">
-          This message was sent from the contact form on restmarkrenovations.com.
-          Replying to this email will reply directly to the customer.
         </div>
       </div>
     </div>
