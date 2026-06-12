@@ -13,8 +13,8 @@ export default function Contact() {
     message: "",
   });
 
-  const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null);
 
   function handleChange(e) {
     setForm({
@@ -26,15 +26,8 @@ export default function Contact() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      message: formData.get("message"),
-    };
+    setLoading(true);
+    setStatus(null);
 
     try {
       const response = await fetch("/api/contact", {
@@ -42,17 +35,36 @@ export default function Contact() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(form),
       });
 
+      const result = await response.json().catch(() => null);
+
       if (response.ok) {
-        alert("Message sent successfully.");
-        form.reset();
+        setStatus({
+          type: "success",
+          message: "Form was submitted successfully.",
+        });
+
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
       } else {
-        alert("Something went wrong. Please try again.");
+        setStatus({
+          type: "error",
+          message: `Error: ${result?.error || "Something went wrong. Please try again."}`,
+        });
       }
     } catch (error) {
-      alert("Could not send message. Please try again.");
+      setStatus({
+        type: "error",
+        message: "Error: Could not send message. Please try again.",
+      });
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -162,11 +174,15 @@ export default function Contact() {
           />
 
           <div className="contact-bottom">
-            <button type="submit">
+            <button type="submit" disabled={loading}>
               {loading ? "Sending..." : "Send Message"}
             </button>
 
-            {status && <div className="contact-status">{status}</div>}
+            {status && (
+              <div className={`contact-status ${status.type}`}>
+                {status.message}
+              </div>
+            )}
           </div>
         </form>
       </section>

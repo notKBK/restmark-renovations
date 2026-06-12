@@ -47,13 +47,13 @@ async function handleContactForm(request, env) {
       width: 100%;
       max-width: 620px;
       margin: 0 auto;
-      padding: 14px 10px;
+      padding: 10px 6px;
       box-sizing: border-box;
     ">
       <div style="
         background-color: #111111;
         color: #ffffff;
-        padding: 20px 18px;
+        padding: 18px 16px;
         border-radius: 12px 12px 0 0;
         box-sizing: border-box;
       ">
@@ -63,14 +63,14 @@ async function handleContactForm(request, env) {
           text-transform: uppercase;
           color: #c9a45c;
           font-weight: 700;
-          margin-bottom: 7px;
+          margin-bottom: 6px;
         ">
           RestMark Renovations
         </div>
 
         <h1 style="
           margin: 0;
-          font-size: 19px;
+          font-size: 18px;
           line-height: 1.25;
           font-weight: 700;
         ">
@@ -80,15 +80,15 @@ async function handleContactForm(request, env) {
 
       <div style="
         background-color: #ffffff;
-        padding: 18px 16px;
+        padding: 16px 14px;
         border: 1px solid #e7e2d8;
         border-top: none;
         border-radius: 0 0 12px 12px;
         box-sizing: border-box;
       ">
         <div style="
-          margin-bottom: 13px;
-          padding-bottom: 13px;
+          margin-bottom: 11px;
+          padding-bottom: 11px;
           border-bottom: 1px solid #eeeeee;
         ">
           <div style="
@@ -113,8 +113,8 @@ async function handleContactForm(request, env) {
         </div>
 
         <div style="
-          margin-bottom: 13px;
-          padding-bottom: 13px;
+          margin-bottom: 11px;
+          padding-bottom: 11px;
           border-bottom: 1px solid #eeeeee;
         ">
           <div style="
@@ -144,8 +144,8 @@ async function handleContactForm(request, env) {
         </div>
 
         <div style="
-          margin-bottom: 13px;
-          padding-bottom: 13px;
+          margin-bottom: 11px;
+          padding-bottom: 11px;
           border-bottom: 1px solid #eeeeee;
         ">
           <div style="
@@ -174,7 +174,10 @@ async function handleContactForm(request, env) {
           </div>
         </div>
 
-        <div>
+        <div style="
+          margin-left: -10px;
+          margin-right: -10px;
+        ">
           <div style="
             font-size: 11px;
             text-transform: uppercase;
@@ -182,6 +185,8 @@ async function handleContactForm(request, env) {
             color: #777777;
             margin-bottom: 7px;
             font-weight: 700;
+            padding-left: 10px;
+            padding-right: 10px;
           ">
             Project Details
           </div>
@@ -192,9 +197,10 @@ async function handleContactForm(request, env) {
             background-color: #f8f6f1;
             border: 1px solid #eee8dc;
             border-radius: 9px;
-            padding: 13px;
+            padding: 12px 10px;
             word-break: break-word;
             box-sizing: border-box;
+            width: 100%;
           ">
             ${escapeHtml(message).replace(/\n/g, "<br>")}
           </div>
