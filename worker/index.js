@@ -35,7 +35,7 @@ async function handleContactForm(request, env) {
     }
 
     const html = `
-      <h2>New Website Contact Form Submission</h2>
+      <h2>Contact Form Submission</h2>
       <p><strong>Name:</strong> ${escapeHtml(name)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
       <p><strong>Phone:</strong> ${escapeHtml(phone || "Not provided")}</p>
@@ -51,9 +51,9 @@ async function handleContactForm(request, env) {
       },
       body: JSON.stringify({
         from: "Website Form <automated@restmarkrenovations.com>",
-        to: ["info@restmarkrenovations.com", "bencooney1212@gmail.com"],
+        to: ["info@restmarkrenovations.com"],
         reply_to: email,
-        subject: `New website message from ${name}`,
+        subject: `${name} filled out the form.`,
         html,
       }),
     });
