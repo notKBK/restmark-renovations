@@ -1,0 +1,302 @@
+.where-map {
+  padding: 40px;
+}
+
+/* default regions */
+.region {
+  fill: #000000;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 1;
+  transition: 0.2s;
+}
+
+/* hover */
+.region.active:hover {
+  fill: #ececec;
+  transform: translateY(-2px);
+}
+
+.region:hover {
+  fill: #111111;
+  transform: translateY(-2px);
+}
+
+/* active regions */
+.region.active {
+  fill: white;
+  stroke: black;
+  stroke-width: 1.5;
+}
+
+/* layout */
+.map-container {
+  position: relative;
+}
+
+/* injected SVG */
+.where-map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* overlay aligns perfectly */
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* pin line */
+.pin line {
+  stroke: black;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* center dot */
+.pin-dot {
+  fill: black;
+}
+
+/* outer ring */
+/* center dot stays solid */
+.pin-dot {
+  fill: rgb(223, 223, 223);
+}
+.pin {
+  pointer-events: all;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.pin-ring-0 {
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+
+  /* 🔥 THIS is the important fix */
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.pin-ring {
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+
+  /* 🔥 THIS is the important fix */
+  transform-box: fill-box;
+  transform-origin: center;
+
+  animation: ringPulse 1.3s ease-out infinite;
+}
+
+/* grow + fade + reset */
+@keyframes ringPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.pin-ring-2 {
+  fill: none;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1;
+
+  /* 🔥 THIS is the important fix */
+  transform-box: fill-box;
+  transform-origin: center;
+
+  animation: ringPulse 1.3s ease-out infinite;
+  animation-delay: 0.05s;
+}
+@keyframes ringPulse2 {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.pin-label {
+  position: absolute;
+
+  /* centered above pin */
+  top: 56%;
+  left: 46%;
+  transform: translate(-50%, -130%);
+
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  backdrop-filter: blur(5px);
+
+  padding: 8px 14px;
+  border-radius: 6px;
+
+  font-size: 15px;
+  letter-spacing: 0.3px;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.25s ease;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.pin-label span {
+  font-weight: 600;
+}
+
+/* ONLY show when hovering pin */
+.map-container:has(.pin:hover) .pin-label {
+  opacity: 1;
+  transform: translate(-50%, -150%);
+}
+
+.pin:hover {
+  transform: translateY(-3px);
+}
+
+.where-we-work-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  gap: 40px;
+}
+
+.where-we-work {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  width: 35%;
+}
+
+.map-container {
+  width: 65%;
+}
+
+.legend {
+  position: absolute;
+  top: 36%;
+  right: 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 600;
+  padding: 20px;
+  padding-right: 0px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  color: white;
+}
+
+.legend-item img {
+  width: 20px;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.where-we-work-bg-text {
+  font-size: 160px;
+  color: #bebebe;
+  text-align: left;
+  position: absolute;
+  max-width: 500px;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  z-index: -1;
+  font-weight: 450;
+}
+
+.scroll-reveal {
+  height: fit-content;
+  padding: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  z-index: 10;
+}
+.scroll-reveal p {
+  font-size: 50px;
+}
+.scroll-reveal > * {
+  margin: 0;
+}
+
+.scroll-reveal span {
+  color: hsla(0, 0%, 33%, 0.2);
+  background-clip: text;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0));
+  background-size: 0% 100%;
+  animation: scroll-reveal linear forwards;
+  animation-timeline: view();
+  animation-range: contain;
+  will-change: background-size;
+  contain: paint;
+}
+
+@keyframes scroll-reveal {
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .where-we-work-container {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .where-we-work {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .where-we-work-bg-text {
+    font-size: 74px;
+    position: relative;
+    transform: none;
+  }
+  .legend {
+    left: 3%;
+    top: 40%;
+  }
+  .map-container {
+    width: 100%;
+    margin-top: 80px;
+  }
+  .where-map {
+    padding: 0px;
+  }
+}

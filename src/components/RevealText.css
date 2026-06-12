@@ -1,0 +1,92 @@
+.reveal-text-wrapper {
+  position: relative;
+
+  --reveal-font-size: clamp(4.5rem, 10vw, 10rem);
+  --reveal-font-weight: 500;
+  --reveal-letter-spacing: -4px;
+  --reveal-line-height: 0.9;
+  --reveal-base-color: #2c2c2c;
+  --reveal-fill-color: rgb(243, 243, 243);
+}
+
+.about-reveal-title {
+  --reveal-font-size: clamp(4rem, 13vw, 175px);
+  --reveal-font-weight: 700;
+  --reveal-letter-spacing: -4px;
+  --reveal-line-height: 0.85;
+  --reveal-base-color: #2e2e2e;
+  --reveal-fill-color: white;
+
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.reveal-line {
+  position: relative;
+  width: fit-content;
+  line-height: var(--reveal-line-height);
+}
+
+.reveal-text-base,
+.reveal-text-fill {
+  font-size: var(--reveal-font-size);
+  font-weight: var(--reveal-font-weight);
+  letter-spacing: var(--reveal-letter-spacing);
+  white-space: nowrap;
+}
+
+.reveal-text-base {
+  color: var(--reveal-base-color);
+}
+
+.reveal-text-fill {
+  color: var(--reveal-fill-color);
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  width: 0%;
+  will-change: width;
+}
+
+.reveal-text-wrapper.active .reveal-line:nth-child(1) .reveal-text-fill {
+  animation: fillText 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.25s;
+}
+
+.reveal-text-wrapper.active .reveal-line:nth-child(2) .reveal-text-fill {
+  animation: fillText 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.65s;
+}
+
+.reveal-text-wrapper.active .reveal-line:nth-child(3) .reveal-text-fill {
+  animation: fillText 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fillText {
+  to {
+    width: 110%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .about-reveal-title {
+    --reveal-letter-spacing: 0px;
+    text-align: center;
+  }
+}
+@media (max-width: 800px) {
+  .reveal-text-wrapper {
+    align-items: center;
+  }
+
+  .reveal-text-wrapper .reveal-line {
+    margin-inline: auto;
+  }
+
+  .reveal-text-wrapper .reveal-text-base,
+  .reveal-text-wrapper .reveal-text-fill {
+    text-align: left;
+  }
+}
+

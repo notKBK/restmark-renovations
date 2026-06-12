@@ -1,0 +1,348 @@
+/* About.css */
+
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  padding-top: 220px;
+  margin: 0px auto;
+}
+
+/* TOP */
+
+.about-container {
+  max-width: 1600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  margin: 40px auto;
+  width: calc(100% - 100px);
+}
+
+/* LEFT */
+
+.about-left {
+  flex: 1;
+  position: sticky;
+  top: 120px;
+}
+
+.about-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 0.85;
+}
+
+.about-title-line {
+  font-size: 200px;
+  font-weight: 700;
+  color: #2e2e2e;
+  letter-spacing: -6px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: -6px;
+}
+
+/* RIGHT */
+
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+  padding-top: 20px;
+}
+
+.about-subtitle {
+  font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  text-align: left;
+  max-width: 750px;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.72);
+  text-align: left;
+  max-width: 850px;
+}
+
+/* VALUES SECTION */
+
+.about-values {
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 60px auto;
+  width: calc(100% - 100px);
+}
+
+.about-values-header {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 750;
+  color: white;
+  text-align: left;
+}
+
+.about-values-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.about-value-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  transition: 0.35s ease;
+}
+
+.about-value-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.about-value-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.35rem;
+}
+
+.about-value-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  text-align: left;
+}
+
+.about-value-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: left;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .about-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100%;
+  }
+
+  .about-left {
+    position: relative;
+    top: unset;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-page {
+    padding: 100px 0px;
+    gap: 100px;
+  }
+
+  .about-title-line {
+    font-size: clamp(4rem, 18vw, 7rem);
+  }
+
+  .about-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .about-value-card {
+    padding: 28px;
+  }
+}
+
+.about-photo-section {
+  height: 100vh;
+  width: 100%;
+  background-image: url("/kitchen.jpg");
+  background-size: cover; /* == object-fit: cover */
+  background-position: center; /* keeps subject centered */
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.our-promise-section {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.our-promise-container {
+  background-color: #111111;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.our-promise {
+  width: 88%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.our-promise-right {
+  width: 50%;
+  max-width: 600px;
+}
+.our-promise-left {
+  width: 50%;
+  max-width: 450px;
+}
+.our-promise-left h2 {
+  margin-bottom: 40px;
+  font-size: 18px;
+  margin-top: 0px;
+}
+.our-promise-left span {
+  font-size: 34px;
+  color: white;
+}
+.our-promise-triangle {
+  height: 140px;
+  width: 100%;
+  background-color: #111111;
+  clip-path: polygon(0 0, 100% 100%, 100% 100%, 0 100%);
+  margin-bottom: -2px;
+}
+
+.our-promise-line {
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 45px;
+  margin-top: 0px;
+}
+
+.our-promise-right span {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  line-height: 1.4;
+}
+
+@media (max-width: 1000px) {
+  .who-we-are {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .who-we-are-title {
+    font-size: 22px;
+    padding: 10px;
+  }
+  .who-we-are-container {
+    padding: 0px;
+    margin: 30px auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-sizing,
+  .who-we-are-text-container {
+    width: 100%;
+  }
+  .who-we-are-text {
+    font-size: 16px;
+  }
+  .our-promise {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .our-promise-left,
+  .our-promise-right {
+    width: 100%;
+  }
+  .about-cta {
+    flex-direction: column;
+    padding: 45px 0px 45px 30px;
+  }
+  .about-cta-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .about-cta-btn {
+    padding: 20px;
+    font-size: 18px;
+  }
+  .about-cta-subtitle {
+    font-size: 24px;
+  }
+  .our-promise-line {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-photo-section {
+    margin-top: 150px;
+    height: fit-content;
+  }
+  .our-promise-container {
+    height: fit-content;
+    background-color: rgba(17, 17, 17, 0.9);
+  }
+  .our-promise-triangle {
+    height: 140px;
+    width: 100%;
+    background-color: rgba(17, 17, 17, 0.9);
+    margin-bottom: -0.25px;
+  }
+
+  .about-container {
+    width: calc(100% - 80px);
+  }
+  .about-values {
+    width: calc(100% - 80px);
+  }
+  .about-title {
+    align-items: center;
+  }
+  .our-promise-left span {
+    font-size: 24px;
+  }
+  .our-promise-right span {
+    font-size: 18px;
+  }
+}

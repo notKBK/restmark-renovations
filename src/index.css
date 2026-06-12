@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  font-family:
+    "Montserrat",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+:root {
+  --main: rgb(255, 255, 255);
+  --second: rgb(216, 216, 216);
+  --gold: linear-gradient(
+    135deg,
+    #8a6a1f 0%,
+    #f5d76e 35%,
+    #fff3b0 50%,
+    #c9972b 70%,
+    #6f5012 100%
+  );
+  --bg: #111111;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  /*padding-top: 100px;*/
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+.title {
+  font-size: 90px;
+}
+
+.title-line {
+  overflow: hidden;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+
+.title-line > span {
+  display: block;
+  transform: translateY(120%);
+  opacity: 0;
+}
+
+.reveal-active .title-line span {
+  transform: translateY(0%);
+  opacity: 1;
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.9s ease;
+}
+
+.reveal-active .title-line:nth-child(2) span {
+  transition-delay: 0.12s;
+}
+
+.reveal-active .title-line:nth-child(3) span {
+  transition-delay: 0.24s;
+}
+
+.reveal-active .title-line:nth-child(4) span {
+  transition-delay: 0.36s;
+}
+.reveal-active .title-line:nth-child(5) span {
+  transition-delay: 0.48s;
+}
+
+.reveal-active .title-line:nth-child(6) span {
+  transition-delay: 0.5s;
+}

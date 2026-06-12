@@ -1,0 +1,58 @@
+.home-about {
+  width: min(90%, 1050px);
+  margin: 0 auto;
+  padding: 65px 0 85px;
+  text-align: center;
+}
+
+.home-about-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.home-about h1 {
+  color: #ffffff;
+  font-size: clamp(1.5rem, 3vw, 2.45rem);
+  line-height: 1.25;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+  max-width: 900px;
+  margin: 0 auto 24px;
+}
+
+.home-about p {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(0.98rem, 1.35vw, 1.12rem);
+  line-height: 1.75;
+  font-weight: 400;
+  max-width: 900px;
+  margin: 0 auto 16px;
+}
+
+.home-about p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .home-about {
+    padding: 50px 0 70px;
+  }
+
+  .home-about-label {
+    font-size: 0.78rem;
+    margin-bottom: 14px;
+  }
+
+  .home-about h1 {
+    font-size: 1.45rem;
+  }
+
+  .home-about p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+}
