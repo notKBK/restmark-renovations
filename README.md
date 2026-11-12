@@ -1,16 +1,47 @@
-# React + Vite
+&#x20;RestMark Renovations
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive website designed and developed for RestMark Renovations, a home renovation company serving Hamilton, Stoney Creek, and the surrounding areas of Ontario.
 
-Currently, two official plugins are available:
+Built using **React, JavaScript, and CSS**, with a focus on modern design, smooth animations, performance, and a consistent experience across desktopand mobile devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[**View Live Website**](https://restmarkrenovations.com/)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Responsive Design** — Custom layouts optimized for desktop, tablet, and mobile devices.
+- **Reusable React Components** — Modular architecture for easier maintenance and future development.
+- **Custom Scroll Animations** — Lightweight CSS animations controlled through Intersection Observer, with Mutation Observer support for dynamically rendered elements.
+- **Interactive Navigation** — Responsive navigation with animated transitions, active-page indicators, and a mobile menu.
+- **Service & Project Showcases** — Dedicated pages highlighting renovation services and completed projects.
+- **Custom Service Area Map** — SVG-based map highlighting service locations throughout the Golden Horseshoe region.
+- **Client-Side Routing** — Multi-page navigation implemented using React Router.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React, JavaScript, HTML5, CSS3
+- **Routing:** React Router
+- **Build Tool:** Vite
+- **APIs:** Intersection Observer, Mutation Observer
+- **Graphics:** SVG
+
+## Development
+
+The website was independently designed and developed, including its component structure, responsive layouts, navigation, animations, and interactive elements.
+
+Emphasis was placed on creating a maintainable codebase while keeping the user experience fast and visually engaging.
+
+## Running Locally
+
+Clone the repository and install dependencies:
+
+1. `npm install`
+2. `npm run dev`
+
+## Other Projects
+
+I've also designed and developed websites and web applications for other businesses, including:
+
+- [**New Tradition Homes Stl.**](https://newtraditionhomestl.com/) — Home builder website with a custom administrative dashboard, property listings, and database integration.
+- [**3 Stones Custom Homes**](https://3stonescustomhomes.com/) — Home renovation website with a strong focus on design, featuring project galleries and interactive elements.
+- [**Niagara Arborists**](https://niagaraarborists.com/) — Business website for a Niagara Region tree service company.
+
