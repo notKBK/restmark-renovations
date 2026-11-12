@@ -24,7 +24,7 @@ export default function Footer() {
           />
 
           <div className="footer-contact">
-            <a href="tel:1234567890" className="footer-contact-item">
+            <a href="tel:2899624359" className="footer-contact-item">
               <FaPhoneAlt />
               <span>(289)-962-4359</span>
             </a>

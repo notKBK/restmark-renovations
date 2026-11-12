@@ -43,7 +43,7 @@ export default function Navbar() {
                 <FaPhone />
               </div>
 
-              <a href="tel:1234567890" className="nav-call-text">
+              <a href="tel:2899624359" className="nav-call-text">
                 <span className="call-label">Call us at</span>
                 <span className="call-number">(289)-962-4359</span>
               </a>

@@ -13,7 +13,7 @@ export default function GetStarted() {
         <span className="gs-note">Reach out for free estimate!</span>
 
         <div className="gs-buttons">
-          <a href="tel:1234567890" className="gs-btn">
+          <a href="tel:2899624359" className="gs-btn">
             Call (123) 456-7890
           </a>
 

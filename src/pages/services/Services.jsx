@@ -3,10 +3,12 @@
 import "./Services.css";
 import useReveal from "../../hooks/useReveal";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const services = [
   {
     key: 1,
+    id: "home-renovations",
     title: "Full Home Renovations",
     image: "/fullhome.jpg",
     description: `Full home renovations are ideal for homeowners looking to completely refresh, modernize, or rework their living space. Whether the goal is improving flow, updating outdated finishes, or creating a more functional layout, we approach each renovation with a focus on quality, comfort, and long-term value.
@@ -17,6 +19,7 @@ From the first walkthrough to the final details, we manage the renovation with c
   },
   {
     key: 2,
+    id: "kitchen-renovations",
     title: "Kitchen Renovations",
     image: "/kitchen.jpg",
     description: `Kitchen renovations can completely change how a home feels and functions. Whether you want a brighter layout, more storage, upgraded finishes, or a better space for cooking and gathering, we help bring the design together with care and precision. We focus on important details like cabinetry, countertops, lighting, flooring, backsplashes, and layout improvements. The goal is to create a kitchen that feels both beautiful and practical, with a layout that supports everyday use.
@@ -25,6 +28,7 @@ A strong kitchen renovation should feel timeless, functional, and connected to t
   },
   {
     key: 3,
+    id: "bathroom-renovations",
     title: "Bathroom Renovations",
     image: "/bathroom.jpg",
     description: `Bathroom renovations are about creating a space that feels clean, comfortable, and professionally completed. Whether it’s a small bathroom update or a full renovation, we focus on improving both the look and function of the space.
@@ -35,6 +39,7 @@ A well-renovated bathroom should feel easy to use every day while still adding s
   },
   {
     key: 4,
+    id: "basement-renovations",
     title: "Basement Finishing",
     image: "/basement.jpg",
     description: `Basement finishing is a great way to turn unused or unfinished space into a comfortable part of the home. Whether you want a family room, entertainment area, office, guest space, or bar area, we help make the basement feel complete and usable. We focus on creating a finished space that feels warm, clean, and connected to the rest of the house. Flooring, lighting, walls, trim, layout, and finishing details all play a major role in making the basement feel comfortable instead of unfinished.
@@ -43,6 +48,7 @@ A well-finished basement adds valuable living space and gives your home more fle
   },
   {
     key: 5,
+    id: "home-additions",
     title: "Home Additions",
     image: "/outdoor.jpg",
     description: `Home additions are designed to give your family more space without needing to move. Whether you need an extra room, larger living area, expanded kitchen, sunroom, or additional functional space, we help create an addition that fits your home and lifestyle.
@@ -62,6 +68,7 @@ function ServiceSection({ service, reverse }) {
   return (
     <section
       ref={sectionRef}
+      id={service.id}
       className={`service-section ${
         reverse ? "service-section-reverse" : ""
       } ${visible ? "service-visible" : ""}`}
@@ -88,6 +95,21 @@ function ServiceSection({ service, reverse }) {
 }
 
 export default function Services() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+
+    const element = document.getElementById(decodeURIComponent(hash.slice(1)));
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [hash]);
+
   return (
     <main className="services-page">
       {/* HERO */}

@@ -1,8 +1,9 @@
 import "./ServicesSection.css";
 import useReveal from "../../hooks/useReveal";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { HiArrowUpRight } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 export default function ServicesSection() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
@@ -17,14 +18,38 @@ export default function ServicesSection() {
   }, []);
 
   const [sectionRef, visible] = useReveal(isMobile ? 0.05 : 0.2);
-  const services = [
-    { title: "Full Home Renovations", image: "/fullhome.jpg" },
-    { title: "Bathroom Finishing", image: "/bathroom.jpg" },
 
-    { title: "Kitchen Renovations", image: "/kitchen.jpg" },
-    { title: "Basement Renovations", image: "/basement.jpg" },
-    { title: "Home Additions", image: "/outdoor.jpg" },
-    { title: "View All Services", image: "" },
+  const services = [
+    {
+      title: "Full Home Renovations",
+      image: "/fullhome.jpg",
+      path: "/services#home-renovations",
+    },
+    {
+      title: "Bathroom Finishing",
+      image: "/bathroom.jpg",
+      path: "/services#bathroom-renovations",
+    },
+    {
+      title: "Kitchen Renovations",
+      image: "/kitchen.jpg",
+      path: "/services#kitchen-renovations",
+    },
+    {
+      title: "Basement Renovations",
+      image: "/basement.jpg",
+      path: "/services#basement-renovations",
+    },
+    {
+      title: "Home Additions",
+      image: "/outdoor.jpg",
+      path: "/services#home-additions",
+    },
+    {
+      title: "View All Services",
+      image: "",
+      path: "/services",
+    },
   ];
 
   const [titleVisible, setTitleVisible] = useState(false);
@@ -77,7 +102,8 @@ export default function ServicesSection() {
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <div
+            <Link
+              to={service.path}
               className={`service-card-wrapper ${cardsVisible ? "cards-visible" : ""}`}
               key={index}
               style={{
@@ -105,7 +131,7 @@ export default function ServicesSection() {
               </div>
 
               <div className="service-arrow"></div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
